@@ -36,6 +36,7 @@ with open(classesFile, 'rt') as f:
 modelConfiguration = "yolov3.cfg";
 modelWeights = "yolov3_59000.weights";
 
+print(f' file {classesFile}, model_config {modelConfiguration}, modelweights {modelWeights}')
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv.dnn.DNN_TARGET_CPU)
