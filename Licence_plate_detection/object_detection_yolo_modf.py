@@ -22,7 +22,7 @@ parser.add_argument('--video', help='Path to video file.')
 args = parser.parse_args()
 
 # Load names of classes
-classesFile = "classes.names";
+classesFile = "/content/darknet/custom/classes.names";
 
 classes = None
 with open(classesFile, 'rt') as f:
