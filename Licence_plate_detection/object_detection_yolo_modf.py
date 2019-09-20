@@ -33,8 +33,8 @@ with open(classesFile, 'rt') as f:
 # modelConfiguration = "darknet-yolov3.cfg";
 # modelWeights = "lapi.weights";
 
-modelConfiguration = "yolov3.cfg";
-modelWeights = "weights/yolov3_4000.weights";
+modelConfiguration = "/content/darknet/custom/yolov3.cfg";
+modelWeights = "yolov3_59000.weights";
 
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
