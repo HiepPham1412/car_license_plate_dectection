@@ -16,8 +16,8 @@ nmsThreshold = 0.4  #Non-maximum suppression threshold
 # inpWidth = 416  #608     #Width of network's input image
 # inpHeight = 416 #608     #Height of network's input image
 
-inpWidth = 608     #Width of network's input image
-inpHeight = 608     #Height of network's input image
+inpWidth = 416     #Width of network's input image
+inpHeight = 416  #Height of network's input image
 
 parser = argparse.ArgumentParser(description='Object Detection using YOLO in OPENCV')
 parser.add_argument('--image', help='Path to image file.')
@@ -36,7 +36,7 @@ with open(classesFile, 'rt') as f:
 # modelConfiguration = "darknet-yolov3.cfg";
 # modelWeights = "lapi.weights";
 
-modelConfiguration = "/content/darknet/custom/yolov3.cfg";
+modelConfiguration = "/content/darknet/custom/yolov3_test.cfg";
 modelWeights = "/content/darknet/custom/weights/yolov3_last.weights";
 
 print(f' file {classesFile}, model_config {modelConfiguration}, modelweights {modelWeights}')
