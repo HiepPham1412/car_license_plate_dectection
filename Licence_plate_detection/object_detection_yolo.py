@@ -13,11 +13,8 @@ import os.path
 confThreshold = 0.5  #Confidence threshold
 nmsThreshold = 0.4  #Non-maximum suppression threshold
 
-# inpWidth = 416  #608     #Width of network's input image
-# inpHeight = 416 #608     #Height of network's input image
-
-inpWidth = 416     #Width of network's input image
-inpHeight = 416  #Height of network's input image
+inpWidth = 416  #608     #Width of network's input image
+inpHeight = 416 #608     #Height of network's input image
 
 parser = argparse.ArgumentParser(description='Object Detection using YOLO in OPENCV')
 parser.add_argument('--image', help='Path to image file.')
@@ -36,14 +33,13 @@ with open(classesFile, 'rt') as f:
 # modelConfiguration = "darknet-yolov3.cfg";
 # modelWeights = "lapi.weights";
 
-modelConfiguration = "/content/darknet/custom/yolov3_test.cfg";
-modelWeights = "/content/darknet/custom/weights/yolov3_last.weights";
+modelConfiguration = "/content/darknet/custom/yolov3.cfg";
+modelWeights = "/content/darknet/custom/weights/yolov3.weights";
 
-print(f' file {classesFile}, model_config {modelConfiguration}, modelweights {modelWeights}')
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv.dnn.DNN_TARGET_CPU)
-print('line 43')
+
 # Get the names of the output layers
 def getOutputsNames(net):
     # Get the names of all the layers in the network
@@ -121,7 +117,7 @@ def postprocess(frame, outs):
 # Process inputs
 winName = 'Deep learning object detection in OpenCV'
 cv.namedWindow(winName, cv.WINDOW_NORMAL)
-print('line 121')
+
 outputFile = "yolo_out_py.avi"
 if (args.image):
     # Open the image file
