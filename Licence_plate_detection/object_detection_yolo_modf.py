@@ -40,7 +40,7 @@ print(f' file {classesFile}, model_config {modelConfiguration}, modelweights {mo
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
 net.setPreferableTarget(cv.dnn.DNN_TARGET_CPU)
-
+print('line 43')
 # Get the names of the output layers
 def getOutputsNames(net):
     # Get the names of all the layers in the network
@@ -118,7 +118,7 @@ def postprocess(frame, outs):
 # Process inputs
 winName = 'Deep learning object detection in OpenCV'
 cv.namedWindow(winName, cv.WINDOW_NORMAL)
-
+print('line 121')
 outputFile = "yolo_out_py.avi"
 if (args.image):
     # Open the image file

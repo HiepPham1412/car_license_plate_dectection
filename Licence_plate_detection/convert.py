@@ -58,7 +58,8 @@ classes = ['LP']
 
 for dir_path in dirs:
     full_dir_path = cwd + '/' + dir_path
-    output_path = full_dir_path +'/../labels/'
+    #output_path = full_dir_path +'/../labels/'
+    output_path = full_dir_path
 
     if not os.path.exists(output_path):
         os.makedirs(output_path)
