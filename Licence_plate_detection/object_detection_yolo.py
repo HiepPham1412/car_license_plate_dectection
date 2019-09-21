@@ -22,7 +22,7 @@ parser.add_argument('--video', help='Path to video file.')
 args = parser.parse_args()
 
 # Load names of classes
-classesFile = "classes.names";
+classesFile = "/content/darknet/custom/classes.names";
 
 classes = None
 with open(classesFile, 'rt') as f:
@@ -33,8 +33,8 @@ with open(classesFile, 'rt') as f:
 # modelConfiguration = "darknet-yolov3.cfg";
 # modelWeights = "lapi.weights";
 
-modelConfiguration = "../../darknet/custom/yolov3.cfg";
-modelWeights = "../../darknet/custom/weights/yolov3_4000.weights";
+modelConfiguration = "/content/darknet/custom/yolov3.cfg";
+modelWeights = "/content/darknet/custom/weights/yolov3_last.weights";
 
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
