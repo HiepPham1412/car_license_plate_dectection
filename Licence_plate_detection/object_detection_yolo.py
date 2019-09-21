@@ -20,7 +20,6 @@ parser = argparse.ArgumentParser(description='Object Detection using YOLO in OPE
 parser.add_argument('--image', help='Path to image file.')
 parser.add_argument('--video', help='Path to video file.')
 args = parser.parse_args()
-
 # Load names of classes
 classesFile = "/content/darknet/custom/classes.names";
 
@@ -34,7 +33,7 @@ with open(classesFile, 'rt') as f:
 # modelWeights = "lapi.weights";
 
 modelConfiguration = "/content/darknet/custom/yolov3.cfg";
-modelWeights = "/content/darknet/custom/weights/yolov3.weights";
+modelWeights = "/content/darknet/custom/weights/yolov3_last.weights";
 
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
 net.setPreferableBackend(cv.dnn.DNN_BACKEND_OPENCV)
