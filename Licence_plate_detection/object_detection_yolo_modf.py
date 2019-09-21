@@ -13,8 +13,11 @@ import os.path
 confThreshold = 0.5  #Confidence threshold
 nmsThreshold = 0.4  #Non-maximum suppression threshold
 
-inpWidth = 416  #608     #Width of network's input image
-inpHeight = 416 #608     #Height of network's input image
+# inpWidth = 416  #608     #Width of network's input image
+# inpHeight = 416 #608     #Height of network's input image
+
+inpWidth = 608     #Width of network's input image
+inpHeight = 608     #Height of network's input image
 
 parser = argparse.ArgumentParser(description='Object Detection using YOLO in OPENCV')
 parser.add_argument('--image', help='Path to image file.')
@@ -22,7 +25,7 @@ parser.add_argument('--video', help='Path to video file.')
 args = parser.parse_args()
 
 # Load names of classes
-classesFile = "classes.names";
+classesFile = "/content/darknet/custom/classes.names";
 
 classes = None
 with open(classesFile, 'rt') as f:
@@ -33,8 +36,8 @@ with open(classesFile, 'rt') as f:
 # modelConfiguration = "darknet-yolov3.cfg";
 # modelWeights = "lapi.weights";
 
-modelConfiguration = "yolov3.cfg";
-modelWeights = "yolov3_59000.weights";
+modelConfiguration = "/content/darknet/custom/yolov3.cfg";
+modelWeights = "/content/darknet/custom/weights/yolov3_last.weights";
 
 print(f' file {classesFile}, model_config {modelConfiguration}, modelweights {modelWeights}')
 net = cv.dnn.readNetFromDarknet(modelConfiguration, modelWeights)
